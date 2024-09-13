@@ -162,6 +162,7 @@ const {  state, saveCreds } =await useMultiFileAuthState(`./session`)
     }
     
     XeonBotInc.public = true
+    
 
     XeonBotInc.serializeM = (m) => smsg(XeonBotInc, m, store)
 
@@ -177,7 +178,7 @@ XeonBotInc.ev.on("connection.update",async  (s) => {
             console.log(chalk.magenta(`${themeemoji} GITHUB:  `))
             console.log(chalk.magenta(`${themeemoji} INSTAGRAM:  `))
             console.log(chalk.magenta(`${themeemoji} WA NUMBER: 94704104383`))
-            console.log(chalk.magenta(`${themeemoji} CREDIT: Master Rocky \n`))
+            console.log(chalk.magenta(`${themeemoji} CREDIT: Cyber Dila Sir\n`))
         }
         if (
             connection === "close" &&
